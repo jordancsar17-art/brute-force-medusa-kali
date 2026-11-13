@@ -1,6 +1,6 @@
 # Simulação de Ataque de Força Bruta com Medusa no Kali Linux
 
-Este projeto é uma simulação em ambiente de laboratório controlado, como realizar ataques de força bruta (*brute force*) utilizando a ferramenta **Medusa** no **Kali Linux**. Foram testados três serviços — **FTP**, **Web (DVWA)** e **SMB** — explorando a fragilidade de credenciais fracas e reforçando a importância de boas práticas de segurança.
+Este projeto é uma simulação em ambiente de laboratório controlado, de ataques de força bruta (*brute force*) utilizando a ferramenta **Medusa** no **Kali Linux**. Foram testados três serviços — **FTP**, **Web (DVWA)** e **SMB** — explorando a fragilidade de credenciais fracas e reforçando a importância de boas práticas de segurança.
 
 > Projeto desenvolvido durante o Bootcamp Santander de Cibersegurança da DIO.
 
@@ -95,7 +95,8 @@ medusa -h 192.168.56.101 -U users.txt -P pass.txt -M http \
 
 A ferramenta retornou **múltiplas credenciais como válidas** — um caso de **falso positivo**. Isso ocorreu porque o módulo utilizado não conseguiu diferenciar corretamente um login bem-sucedido de um malsucedido, marcando praticamente todas as tentativas como sucesso.
 
-![Falso positivo na saída do Medusa](web-medusa.png)
+![Falso positivo na saída do Medusa - parte 1](web-medusa-1.png)
+![Falso positivo na saída do Medusa - parte 2](web-medusa-2.png)
 
 Por isso, **não confiei cegamente na saída da ferramenta** e validei a credencial realizando o login manualmente na aplicação. O acesso foi bem-sucedido com a credencial `admin` / `password`:
 
